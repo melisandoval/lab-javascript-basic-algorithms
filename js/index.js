@@ -68,3 +68,59 @@ const etRegex = / et /g;
 console.log(lorem.match(etRegex).length);
 
 // Bonus 2:
+
+const palindromeChecker = (phraseToCheck) => {
+  let phraseToCheckRefined = "";
+
+  for (let i = 0; i < phraseToCheck.length; i++) {
+    if (
+      phraseToCheck[i] === "," ||
+      phraseToCheck[i] === " " ||
+      phraseToCheck[i] === "!" ||
+      phraseToCheck[i] === "?" ||
+      phraseToCheck[i] === "'"
+    ) {
+      continue;
+    } else phraseToCheckRefined += phraseToCheck[i].toLocaleLowerCase();
+  }
+
+  let phraseReversed = "";
+
+  for (let i = phraseToCheckRefined.length - 1; i >= 0; i--) {
+    phraseReversed += phraseToCheckRefined[i].toLowerCase();
+  }
+
+  if (phraseToCheckRefined === phraseReversed) {
+    console.log("Is a palindrome!");
+  } else {
+    console.log("Is not a palindrome.");
+  }
+};
+
+const palindromePhrases = [
+  "A man, a plan, a canal, Panama!",
+  "Amor, Roma",
+  "race car",
+  "A man, a plan, a canal, Panama!",
+  "stack cats",
+  "step on no pets",
+  "taco cat",
+  "put it up",
+  "Was it a car or a cat I saw?",
+  "No 'x' in Nixon",
+];
+
+const notPalindromePhrases = [
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  "Aliquam laoreet consequat urna",
+  "et interdum tortor tempor ac",
+  "Aliquam sodales consectetur est hendrerit efficitur",
+];
+
+palindromePhrases.forEach((phrase) => {
+  palindromeChecker(phrase);
+});
+
+notPalindromePhrases.forEach((phrase) => {
+  palindromeChecker(phrase);
+});
