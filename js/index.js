@@ -43,3 +43,15 @@ for (let i = hacker2.length - 1; i >= 0; i--) {
 }
 
 console.log(hacker2Reversed);
+
+if (hacker1Uppercase > hacker2Reversed) {
+  console.log("The driver's name goes first.");
+}
+
+if (hacker2Reversed > hacker1Uppercase) {
+  console.log("Yo, the navigator goes first definitely.");
+}
+
+if (hacker2Reversed == hacker1Uppercase) {
+  console.log("What?! You both have the same name?");
+}
